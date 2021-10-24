@@ -3,9 +3,9 @@ Deploy "Todo" app provided by Docker to one virtual machine (CentOS Linux 7) wit
 
 I used two virtual machines , the main one is a Kali linux machine where I made the deployment of application into the CentOS machine.
 
-Here I used two diffrent files : iventory and playbook.
+Here, I used two diffrent files : iventory and playbook.
 
-The iventory file where I stored the IP_Addr of the host(192.168.50.141) , the port(22 for ssh) , and credentials for a successful login.
+The iventory file where I stored the IP_Addr of the host(192.168.50.141) , the port(22 for ssh) and credentials for a successful login.
 The ansible playbook file is getting-started_deploy.yaml where I had to put the task of copying all the files from the local path location to the remote server so I done the deploy.
 
 For the task to be accomplished I used a single command : $ ansible-playbook -i inventory getting-started_deploy.yaml
