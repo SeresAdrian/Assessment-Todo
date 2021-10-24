@@ -1,5 +1,5 @@
 # Assessment-Todo
-Deploy "Todo" app provided by Docker to one virtual machine (CentOS Linux 7) with ansible.
+Deploy "Todo" app provided by Docker to one virtual machine (CentOS Linux 7) with Ansible.
 
 I used two virtual machines , the main one is a Kali linux machine where I made the deployment of application into the CentOS machine.
 
@@ -13,7 +13,7 @@ For the task to be accomplished I used a single command : "$ ansible-playbook -i
 After the command succesfully ran the screen should look like this:
 ![returned playbook state](https://user-images.githubusercontent.com/48512041/138588044-fe74a827-840d-48e5-a814-d78925afcb3d.jpg)
 
-On the remote server, the file appeared at the path specified in playbook which is /home , cd(change directory) into the /home/getting-started/app where I built the app with "# docker built -t getting-started . " and then I ran the app with "# docker run -dp 3000:3000 getting-started". The application works as expected, but I need to add a database(because I don't want to put items into the list everytime I ran the app) into it so I have to add a volume with "# docker volume create todo-db" I delete the old docker container with "# docker rm -f" and then I ran again the app but with the specified db volume "# docker run -dp 3000:3000 -v todo-db:/etc/todos getting-started".
+On the remote server, the file appeared at the path specified in playbook which is /home , cd(change directory) into the /home/getting-started/app where I built the app with "# docker built -t getting-started . " and then I ran the app with "# docker run -dp 3000:3000 getting-started". The application works as expected, but I need to add a database(because I don't want the changes to be removed when the container is restarted) into it so I have to add a volume with "# docker volume create todo-db" I delete the old docker container with "# docker rm -f" and then I ran again the app but with the specified db volume "# docker run -dp 3000:3000 -v todo-db:/etc/todos getting-started".
 
 For the application to be seen check the following link:
 http://192.168.50.141:3000/
@@ -21,3 +21,4 @@ http://192.168.50.141:3000/
 Legend:
   - '$' sign is used on kali machine as normal user(kali)
   - '#' sign is used on remote machine(CentOS) as root user
+  - /etc/todos is path location where SQLite stores its data in container's filesystem
