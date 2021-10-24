@@ -16,5 +16,5 @@ After the command succesfully ran the screen should look like this
 
 On the remote server, the file appeared at the path specified in playbook which is /home , cd(change directory) into the /home/getting-started/app where I built the app with "# docker built -t getting-started . " and then I ran the app with "# docker run -dp 3000:3000 getting-started". The application works as expected, but I need to add a database(because I don't want to put items into the list everytime I ran the app) into it so I have to add a volume with "# docker volume create todo-db" I delete the old docker container with "# docker rm -f" and then I add again the app but with the specified db volume "# docker run -dp 3000:3000 -v todo-db:/etc/todos getting-started"
 
-For the application to be seen check the site below:
+For the application to be seen check the following link:
 http://192.168.50.141:3000/
