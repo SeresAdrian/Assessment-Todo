@@ -1,4 +1,0 @@
-[getting-started]
-192.168.50.141 ansible_port=22 ansible_ssh_pass=centos ansible_ssh_user=centos
-
-
