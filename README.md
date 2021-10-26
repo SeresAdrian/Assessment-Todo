@@ -16,7 +16,7 @@ After the command succesfully ran the screen should look like this:
 On the remote server, the file appeared at the path specified in playbook which is /home , cd(change directory) into the /home/getting-started/app where I built the app with "# docker built -t getting-started . " and then I ran the app with "# docker run -dp 3000:3000 getting-started". The application works as expected, but I need to add a database(because I don't want the changes to be removed when the container is restarted) into it so I have to add a volume with "# docker volume create todo-db" I delete the old docker container with "# docker rm -f" and then I ran again the app but with the specified db volume "# docker run -dp 3000:3000 -v todo-db:/etc/todos getting-started".
 
 For the application to be seen check the following link:
-https://dd46068c19a63a.lhr.domains
+https://ec1933bf4045ea.lhr.domains
 
 Legend:
   - '$' sign is used on kali machine as normal user(kali)
