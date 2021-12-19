@@ -1,4 +1,4 @@
-# Assessment-Todo
+# Todo
 Deploy "Todo" app provided by Docker to one virtual machine (CentOS Linux 7) with Ansible.
 
 I used two virtual machines , the main one is a Kali linux machine where I made the deployment of application into the CentOS machine.
